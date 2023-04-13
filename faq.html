@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FAQ</title>
+        
+        <nav>
+
+        </nav>
+
+        <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+    </head>
+
+    <style>
+            *{
+                box-sizing: border-box;
+            }
+
+
+            body{
+                display: flex;
+                padding: 0;
+                margin: 0;
+                background:black;
+                flex-direction: column;
+                gap: 10px;
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 100;
+            }
+
+             main{
+                margin-right: auto;
+                margin-left: auto;
+                width: 95vw;
+                display: flex;
+                flex-grow: 10;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+
+            h1 {
+                color: #fff8a9;
+            }
+
+            .collapsible {
+                background-color: #948dfd;
+                color: white;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: 1px solid black;
+                text-align: left;
+                outline: none;
+                font-size: 20px;
+                border-radius: 10px;
+                font-family: 'Orbitron', sans-serif;
+            }
+
+            .collapsible:after {
+                content: '\02795';
+                font-size: 13px;
+                color: white;
+                float: right;
+                margin-left: 5px;
+
+            }
+
+            .active:after {
+                content: "\2796"; 
+            }
+
+            .active, .collapsible:hover {
+                background-color: #555;
+            }
+
+            .content {
+                padding: 0 18px;
+                display: none;
+                overflow: hidden;
+                background-color: black;
+                color: #fef8a0;
+                font-size: 20px;
+                width: 100%;
+                font-family: 'Orbitron', sans-serif;
+            }
+
+            .source {
+                color: #fef8a0;
+                font-size: 15px;
+                text-decoration: none;
+            }
+
+            .image {
+                border-radius: 10px;
+                size: flex;
+            }
+
+            .column {
+                float: left;
+                padding: 10px;
+            }
+
+
+            .left {
+                width: 60%;
+                padding-right: 50px;
+            }
+
+            .right {
+                width: 40%;
+            }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            h3 {
+                color: #c3bbfb;
+            }
+            
+            input[type=text], select, textarea {
+                background-color: lightgrey;
+                width: 100%; 
+                padding: 12px; 
+                border: 1px solid #ccc; 
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-top: 6px; 
+                margin-bottom: 16px; 
+                resize: vertical;
+                font-size: 15px;
+                font-family: 'Orbitron', sans-serif;
+            }
+
+            input[type=submit] {
+                background-color: #948dfd;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+                background-color: #948dfd;
+            }
+
+            .container {
+                font-size: 20px;
+                color: white;
+                font-weight: 200;
+                border-radius: 5px;
+                background-color: grey;
+                padding: 20px;
+            }
+        </style>
+
+    <body>
+        <main>
+            <div class="row">
+                <div class="column left">
+                    <h1>Frequently Asked Questions</h1>
+
+                    <button type="button" class="collapsible">Are you a space station?</button>
+                    <div class="content">
+                        <p>No! We are a site committed to providing information about space and other astronomical events!</p>
+                    </div>
+
+                    <button type="button" class="collapsible">Are you affiliated with NASA?</button>
+                    <div class="content">
+                        <p>Nope. However, we do use some of their APIs to power the information that makes it onto our site.</p>
+                    </div>
+
+                    <button type="button" class="collapsible">What is a planet?</button>
+                    <div class="content">
+                        <p>A planet must do three things: it must orbit a star, it must be big enough to have enough gravity to force a spherical shape, and it must be big enough that its gravity cleared away any objects of a similar size near its orbit.</p>
+                        <a class="source" href="https://spaceplace.nasa.gov/planet-what-is/en/#:~:text=The%20Short%20Answer%3A,similar%20size%20near%20its%20orbit" target="_blank">(Source)</a>
+                    </div>
+
+                    <button type="button" class="collapsible">How many planets are there in our solar system?</button>
+                    <div class="content">
+                        <p>There are 8 planets in our solar system.</p>
+                        <img class="image" src="https://res.cloudinary.com/dctkncnc5/image/upload/v1645631108/solar-system--Untitled_vxb5z8.jpg" alt="Solar System" style="width:800px;height:500px;">
+                    </div>
+
+                    <button type="button" class="collapsible">How many Earths can fit inside the Sun?</button>
+                    <div class="content">
+                        <p>A hollow Sun would fit around 960,000 spherical Earths. If squished inside with no wasted space, then around 1,300,000 would fit inside. The Sun’s surface area is 11,990 times that of the Earth’s.</p>
+                        <a class="source" href="https://space-facts.com/the-sun/" target="_blank">(Source)</a>
+                    </div>
+                    
+                    <button type="button" class="collapsible">Which planet has the most moons?</button>
+                    <div class="content">
+                        <p>Saturn has as 62 confirmed moons, but that does not compare to Jupiter, which has a total of 69 known moons. Jupiter has the most moons of any planet in the Solar System. Of the 69 moons, only 53 of them have been named. That means 16 moons have yet to be named. The unnamed moons are currently called provisional moons, and they are identified by numbers and letters.</p>
+                        <img class="image" src="https://nineplanets.org/wp-content/uploads/2020/09/DfA-MVwU0AEMFlm.jpg" alt="Saturn" style="width:700px;height:500px;">
+                        <a class="source" href="https://nineplanets.org/questions/which-planet-has-the-most-moons/#:~:text=Jupiter%20has%20the%20most%20moons%20of%20any%20planet%20in%20the%20Solar%20System." target="_blank">(Source)</a>
+                    </div>
+
+                    <button type="button" class="collapsible">What is the largest planet in our solar system?</button>
+                    <div class="content">
+                        <p>Jupiter is more than twice as massive than the other planets of our solar system combined. The giant planet's Great Red Spot is a centuries-old storm bigger than Earth.</p>
+                        <img class="image" src="https://cdn.mos.cms.futurecdn.net/Cvzdqd7AxLzjzQNoZaQVhC.jpg" alt="Jupiter" style="width:800px;height:500px;">
+                        <a class="source" href="https://solarsystem.nasa.gov/planets/jupiter/overview/#:~:text=The%20Latest&text=Fifth%20in%20line%20from%20the,all%20the%20other%20planets%20combined." target="_blank">(Source)</a>
+                    </div>
+
+                    <button type="button" class="collapsible">What is the largest artificial satellite?</button>
+                    <div class="content">
+                        <p>The largest artificial satellite is the International Space Station (ISS). The main part of this is as big as a large five-bedroom house, but including solar panels, it is as large as a rugby field.</p>
+                        <img class="image" src="https://www.nasa.gov/sites/default/files/s132e012209_sm.jpg" alt="ISS" style="width:700px;height:500px;">
+                        <a class="source" href="https://www.sciencelearn.org.nz/resources/269-artificial-satellites#:~:text=The%20largest%20artificial%20satellite%20is,large%20as%20a%20rugby%20field." target="_blank">(Source)</a>
+                    </div>
+                    
+                    <button type="button" class="collapsible">What is the largest satellite in our solar system?</button>
+                    <div class="content">
+                        <p>Ganymede is the largest satellite in our solar system. It is larger than Mercury and Pluto, and three-quarters the size of Mars..</p>
+                        <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Ganymede_-_Perijove_34_Composite.png/1200px-Ganymede_-_Perijove_34_Composite.png" alt="Ganymede" style="width:500px;height:500px;">
+                        <a class="source" href="https://solarsystem.nasa.gov/moons/jupiter-moons/ganymede/overview/" target="_blank">(Source)</a>
+                    </div>
+                    
+                    <br>
+                    <br>
+                    <br>
+                    <hr>
+                    <br>
+
+                    <h1>Do you have any questions?</h1>
+                    <h3>Contact us below:</h3>
+
+                    <div class="container">
+                        <form action="action_page.php">
+
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                            <label for="subject">Subject</label>
+                            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                            <input type="submit" value="Submit">
+
+                        </form>
+                    </div>
+                    
+
+                </div>
+
+                <div class="column right">
+                    <img src="earthpiccropped.jpg" alt="Earth" style="float: right; width: 100%">
+                </div>
+                
+            </div>
+
+            
+            
+
+        </main>
+    </body>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                content.style.display = "none";
+                } else {
+                content.style.display = "block";
+                }
+            });
+        }
+      
+    </script>
+</html>
