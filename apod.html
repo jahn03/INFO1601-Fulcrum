@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+
+
+<style>
+body {
+ height: 1000px;
+ background-color: black;
+}
+ 
+  .topnav {
+  font-family: 'Orbitron', sans-serif;
+  overflow: hidden;
+  background-color: #000004;
+   background-image: url("https://media2.spaceref.com/wp-content/uploads/2023/02/25200220/hubble_spt-clj0019-2026_potw2308a.jpg");
+  color: purple;
+  
+}
+
+.topnav a {
+  
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black ;
+}
+    
+.dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: #ddd;
+  color: black ;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  color: #000000;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 20px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+  
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  position: relative;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+  
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black; /* change the background color to black */
+  color: white; /* change the text color to white */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.show {
+  display: block;
+}
+  .logo a {
+  font-weight: bold;
+  font-size: 28px;
+}
+.footer {
+   font-family: 'Orbitron', sans-serif;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   text-align: center;
+   background-image: url("https://media2.spaceref.com/wp-content/uploads/2023/02/25200220/hubble_spt-clj0019-2026_potw2308a.jpg");
+}
+
+.footer p {
+  color: white;
+  text-align: center;
+}
+  
+
+
+
+h2{
+ font-family: 'Orbitron', sans-serif;
+ font-weight: bold;
+ font-size: 30px;
+ font-style: italic;
+ color: #fff8a9;
+ margin-left: auto;
+ margin-right: auto;
+ text-align: center;
+ background-repeat: no-repeat;
+ background-position: center;
+}
+ h1{
+ font-size: 18px;
+ color: #ffffff;
+}
+.search{
+ margin: auto;
+ text-align: center;
+font-family: 'Orbitron', sans-serif;
+}
+
+
+button{
+ font-weight: bold;
+font-family: 'Orbitron', sans-serif;
+}
+
+
+#APOD{
+font-family: 'Orbitron', sans-serif;
+ font-size: 20px;
+ color: #a7a3cf;
+ margin-left: 100px;
+ margin-right: 50px;
+ text-align: center;
+ border-spacing: 10px;
+}
+ input[type="date"] {
+ width: 200px;
+ padding: 10px;
+ border-radius: 5px;
+ border: none;
+ background-color: #545454;
+ color: #ffffff;
+ font-size: 18px;
+ text-align: center;
+ outline: none;
+ cursor: pointer;
+} 
+
+
+img {
+ border: 5px solid #ffffff;
+ border-radius:  20px;
+ float: left;
+ margin-right: 20px;
+}
+
+
+#caption {
+ text-align: justify;
+ padding: 10px;
+ margin-top: 0;
+ margin-bottom: 20px;
+ width: 600px;
+ display: inline-block;
+}
+
+
+#title{
+ color: #948dfd;
+ font-size: 24px;
+ font-weight: bold;
+}
+ </style>
+</head>
+<body>
+<div class="topnav">
+  <div class="logo">
+   <a href="#about">INTERSTELLAR</a>
+  </div>
+  <div class="topnav-right">
+    <a href="#search">Home</a>
+    <div class="dropdown">
+    <button class="dropbtn" 
+    onclick="myFunction()">Menu
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="#">Our Solar System</a>
+    <a href="#">Solar System Model</a>
+    <a href="#">About Planets</a>
+    <a href="#">About Stars</a>
+    <a href="#">Astronomy Picture of the Day</a>
+    <a href="#">The Mars Rover</a>
+
+  </div>
+  </div>
+    <a href="#about">FAQ</a>
+    <a href="#search">Search</a>
+  </div>
+</div>
+
+<br>
+<div id="APOD">
+<h2>Astronomy Picture of the Day</h2>
+ <h1> Please select a date to see a picture: </h1>
+   <input type="date" id="date" onchange="getDate();">
+      <br>
+   <h3 class="img-title" id="title"></h3>
+ <br>
+   <em class="date" id="pic_date"></em>
+   <img src="" alt="" id="apod_pic" class="img-apod"
+   width="600" height="400">
+ <br>
+   <p class="caption" id="caption"></p>
+</div>
+
+  <div class="footer">
+<p>About Us: INTERSTELLAR is a group of space enthusiasts educating others about space!</p>
+</div>
+
+
+<script type="text/javascript">
+ function myFunction() {
+ document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+ if (!e.target.matches('.dropbtn')) {
+ var myDropdown = document.getElementById("myDropdown");
+   if (myDropdown.classList.contains('show')) {
+     myDropdown.classList.remove('show');
+   }
+ }
+}
+       // Declaration of variables
+       var method = "GET";
+       const key =
+       "WedzrLgud8n3kGMRbsuc8WkzhQlECeBmAmvMKpSP";
+       var url =
+       "https://api.nasa.gov/planetary/apod?api_key="
+               + key + "&date=";
+       var mode = true;
+       var date;
+       // Function definition to get date from
+       // input box and supply in sendHttpRequest
+       // function
+       function getDate() {
+           date = document.getElementById("date").value;
+           console.log(date);
+           sendHttpRequest(method, url + date,
+               mode).then((data) => {
+               console.log(data);
+               update(data);
+           });
+       }
+       // Declaration of update function to
+       // display the fetched data on webpage
+       function update(data) {
+           document.getElementById("pic_date")
+               .innerHTML = data.date;
+           document.getElementById("title")
+               .innerHTML = data.title;
+           document.getElementById("apod_pic")
+               .src = data.url;
+           document.getElementById("caption")
+               .innerHTML = data.explanation;
+           return data;
+       }
+       // Send request to nasa portal to data
+       // using the XMLHttpRequest
+       function sendHttpRequest(method, url, mode) {
+           return new Promise((resolve, reject) => {
+               var req = new XMLHttpRequest();
+               req.onreadystatechange = function () {
+                   if (this.readyState == 4) {
+                       if (this.status == 200) {
+                           var data = JSON
+                               .parse(this.response);
+                           console.log(data);
+                           resolve(data);
+                       }
+                   }
+               }
+               req.open(method, url, mode);
+               req.send();
+           });
+       }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

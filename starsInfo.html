@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8" />
+   <title>Star Information</title>
+   <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+   <style>
+
+     body {
+       font-family: Arial, sans-serif;
+       margin: 0;
+       padding: 0;
+       background-color: black;
+       height: 3000px;
+     }
+    
+
+
+     h1 {
+       text-align: center;
+       color: #fef8a0;
+      font-family: 'Orbitron', sans-serif;
+      font-style: italic;
+     }
+
+
+     .gallery {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       font-family: 'Orbitron', sans-serif;
+     }
+
+
+     .item {
+       width: 400px;
+       border: 1px solid #ddd;
+       border-radius: 15px;
+       margin: 10px;
+       padding: 10px;
+       text-align: center;
+       background-color: #5b5b8a;
+       color: white;
+     }
+
+
+     .item h2 {
+       margin: 0;
+       color: #fef8a0;
+     }
+
+
+     .item img {
+       max-width: 100%;
+       height: auto;
+     }
+   
+  .topnav {
+  font-family: 'Orbitron', sans-serif;
+  overflow: hidden;
+  background-color: #000004;
+   background-image: url("https://media2.spaceref.com/wp-content/uploads/2023/02/25200220/hubble_spt-clj0019-2026_potw2308a.jpg");
+  color: purple;
+  
+}
+
+.topnav a {
+  
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black ;
+}
+    
+.dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: #ddd;
+  color: black ;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  color: #000000;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 20px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+  
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  position: relative;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+  
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black; /* change the background color to black */
+  color: white; /* change the text color to white */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.show {
+  display: block;
+}
+  .logo a {
+  font-weight: bold;
+  font-size: 28px;
+}
+.footer {
+   font-family: 'Orbitron', sans-serif;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   text-align: center;
+   background-image: url("https://media2.spaceref.com/wp-content/uploads/2023/02/25200220/hubble_spt-clj0019-2026_potw2308a.jpg");
+}
+
+.footer p {
+  color: white;
+  text-align: center;
+}
+
+
+   </style>
+ </head>
+ <body>
+   
+<div class="topnav">
+  <div class="logo">
+   <a href="#about">INTERSTELLAR</a>
+  </div>
+  <div class="topnav-right">
+    <a href="#search">Home</a>
+    <div class="dropdown">
+    <button class="dropbtn" 
+    onclick="myFunction()">Menu
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="#">Our Solar System</a>
+    <a href="#">Solar System Model</a>
+    <a href="#">About Planets</a>
+    <a href="#">About Stars</a>
+    <a href="#">Astronomy Picture of the Day</a>
+    <a href="#">The Mars Rover</a>
+
+  </div>
+  </div>
+    <a href="#about">FAQ</a>
+    <a href="#search">Search</a>
+  </div>
+</div>
+
+
+   <h1>Star Information</h1>
+
+
+   <div class="gallery">
+
+
+   </div>
+
+
+  
+<div class="footer">
+<p>About Us: INTERSTELLAR is a group of space enthusiasts educating others about space!</p>
+</div>
+
+   <script>
+  function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+
+
+fetch('https://api.sheety.co/9b2f3265bfab9b1d63943bc3e9db0b59/starApiFinal/sheet1')
+       .then((response) => response.json())
+       .then((data) => {
+         const gallery = document.querySelector('.gallery');
+
+
+         data.sheet1.forEach((star) => {
+           const item = document.createElement('div');
+           item.classList.add('item');
+
+
+           const img = document.createElement('h1');
+           img.src = star.image;
+           img.alt = star.name;
+
+
+           const name = document.createElement('h2');
+           name.textContent = star.name;
+
+
+           const info = document.createElement('p');
+           info.textContent = `Astronomical Name: ${star.astronomicalName}`;
+
+
+           const meaning = document.createElement('p')
+           meaning.textContent = `Meaning: ${star.meaning}`;
+
+
+           const appMag = document.createElement('p')
+           appMag.textContent = `Apparent Magnitude: ${star.apparentMagnitude}`;
+          
+           const abMag = document.createElement('p')
+           abMag.textContent = `Absolute Magnitude: ${star.absoluteMagnitude}`;
+
+
+           item.appendChild(img);
+           item.appendChild(name);
+           item.appendChild(info);
+           item.appendChild(meaning);
+           item.appendChild(appMag);
+           item.appendChild(abMag);
+          
+           gallery.appendChild(item);
+         });
+       })
+       .catch((error) => console.log(error));
+   </script>
+ </body>
+</html>
+
+
